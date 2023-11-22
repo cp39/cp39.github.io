@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Explore criticalpoint39's World</title>
+	<style>
+		h2, h3, h4, h5, h6 {
+			color: darkblue;
+			font-family: 'Arial Black', serif;
+			margin-top: 6em;
+			font-size: 25px;
+		}
+
+		h1 {
+			color: darkblue;
+			font-family: 'Arial Black', serif;
+			font-size: 36px;
+			font-weight: bold;
+			margin-top: 5em;
+		}
+
+		body {
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+			padding-bottom: 150px;
+			max-width: 40%;
+			font-family: 'Palatino Linotype', serif;
+			color: darkblue;
+		}
+
+        @media screen and (max-width: 1400px) {
+            body {
+                max-width: 69%;
+            }
+
+            nav a {
+                font-size: 24px;
+                margin: 0px 45px;
+            }
+
+            .active {
+                font-size: 27px;
+            }
+        }
+
+        @media screen and (max-width: 1300px) {
+            body {
+                max-width: 75%;
+            }
+
+            nav a {
+                font-size: 24px;
+                margin: 0px 40px;
+            }
+
+            .active {
+                font-size: 27px;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            body {
+                max-width: 81%;
+            }
+
+            nav a {
+                font-size: 23px;
+                margin: 0px 35px;
+            }
+
+            .active {
+                font-size: 26px;
+            }
+        }
+
+        @media screen and (max-width: 1100px) {
+            body {
+                max-width: 88%;
+            }
+
+            nav a {
+                font-size: 23px;
+                margin: 0px 30px;
+            }
+
+            .active {
+                font-size: 26px;
+            }
+        }
+
+
+        @media screen and (max-width: 900px) {
+            body {
+                max-width: 91%; /* 或您认为合适的比例 */
+            }
+
+            nav a {
+                font-size: 22px;
+                margin: 0px 25px;
+            }
+
+            .active {
+                font-size: 25px;
+            }
+        }
+
+		nav {
+			position: fixed;
+			text-align: center;
+			top: 0;
+			left: 0px;
+			right: 0px;
+			width: 100%;
+			background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+			padding: -10px;
+			display: inline;
+			justify-content: initial;
+		}
+
+			nav a {
+				font-family: 'Castellar', serif;
+				font-weight: lighter;
+				font-size: 25px;
+				text-align: center;
+				margin: 0px 10px;
+				padding: 0px;
+				display: inline-block;
+				text-decoration: none;
+				color: darkblue;
+			}
+
+		a {
+			color: darkblue;
+			font-family: 'Palatino Linotype', serif;
+			font-size: 25px;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		li {
+			margin: 20px;
+		}
+
+		.background-container {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255,0)), url('url_e.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			z-index: -1;
+		}
+
+		.main {
+			list-style-type: none;
+		}
+
+		.writer {
+			font-family: 'Palatino Linotype', serif;
+			font-weight: lighter;
+			color: darkblue;
+			font-size: 18px;
+			font-style: italic;
+		}
+
+		.pdf-link {
+			font-family: 'Palatino Linotype', serif;
+			font-weight: lighter;
+			color: darkblue;
+			font-size: 18px;
+			text-decoration: underline;
+			font-style: initial;
+		}
+
+		.cite {
+			font-family: 'Palatino Linotype', serif;
+			color: darkblue; /* [cite] 字体颜色 */
+			font-size: 18px; /* 字体大小 */
+			cursor: pointer; /* 设置鼠标为手形指针 */
+			text-decoration: underline; /* 下划线 */
+			font-style: initial;
+		}
+
+		.active {
+			font-family: 'Castellar', serif;
+			font-weight: bold;
+			font-size: 26px;
+		}
+
+        .grant {
+            font-family: 'Palatino Linotype', serif;
+            font-size: 16px;
+            color: darkblue;
+            list-style-type: none;
+        }
+
+		.contact {
+			font-family: 'Palatino Linotype', serif;
+			font-size: 24px;
+			color: darkblue;
+			font-weight: bold;
+			list-style-type: none;
+		}
+	</style>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			var sections = document.querySelectorAll(".section");
+			var navLinks = document.querySelectorAll("nav a");
+
+			window.addEventListener("scroll", function () {
+				sections.forEach(function (section, index) {
+					var rect = section.getBoundingClientRect();
+					if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+						navLinks.forEach(function (link) {
+							link.classList.remove("active");
+						});
+						navLinks[index].classList.add("active");
+					}
+				});
+			});
+		});
+	</script>
+
+	<script>
+		function copyCitation(citationText) {
+			var textarea = document.createElement('textarea');
+			textarea.value = citationText;
+			document.body.appendChild(textarea);
+			textarea.select();
+			document.execCommand('copy');
+			document.body.removeChild(textarea);
+			alert('Contact information copied: ' + citationText);
+		}
+	</script>
+
+
+</head>
+
+<body>
+	<div class="background-container"></div>
+
+	<h1>EXPLORE CP39'S WORLD</h1>
+
+
+	<nav>
+		<a href="#section1">HOME PAGE</a>
+		<a href="#section2">INTERESTS</a>
+		<a href="#section3">SKILLS</a>
+		<a href="#section4">RESUME</a>
+		<a href="#section5">CONTACT</a>
+
+	</nav>
+
+	<div id="content">
+		<div id="section1" class="section">
+			<h2>HOME PAGE</h2>
+			<ul>
+				<li class="main">
+					Social polarization has been known to cause unrest and instability. We set out to understand public behaviors during the COVID-19 pandemic and explore the potential reasons behind the polarization phenomenon. Understanding the causes of such polarized behavior is important not only for comprehending the far-reaching implications of the COVID-19 crisis in its aftermath, but also sheds light on other observed polarized behavior and subsequent social conflict.
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="content">
+		<div id="section2" class="section">
+			<h2>INTERESTS</h2>
+			<ul>
+				<li class="main">
+					Social polarization has been known to cause unrest and instability. We set out to understand public behaviors during the COVID-19 pandemic and explore the potential reasons behind the polarization phenomenon. Understanding the causes of such polarized behavior is important not only for comprehending the far-reaching implications of the COVID-19 crisis in its aftermath, but also sheds light on other observed polarized behavior and subsequent social conflict.
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="content">
+		<div id="section3" class="section">
+			<h2>SKILLS</h2>
+			<ul>
+				<li class="main">
+					Social polarization has been known to cause unrest and instability. We set out to understand public behaviors during the COVID-19 pandemic and explore the potential reasons behind the polarization phenomenon. Understanding the causes of such polarized behavior is important not only for comprehending the far-reaching implications of the COVID-19 crisis in its aftermath, but also sheds light on other observed polarized behavior and subsequent social conflict.
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="content">
+		<div id="section4" class="section">
+			<h2>RESUME</h2>
+			<ul>
+				<li class="main">
+					<a href="PolarPan20230726.pdf">Path-Dependent Equilibrium and Polarization in Public Responses to a Pandemic</a>
+					<p class="writer">writers 1<a href="PolarPan20230726.pdf" class="pdf-link">[PDF]</a><span class="cite" onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'" onclick="copyCitation('Citation for Paper 1')">[cite]</span></p>
+					<p>A model of dynamic game among heterogeneous agents in response to a pandemic is developed, in which the agents' communicable-activity decisions collectively affect the transmission risk of the environment and individually affect each agent's utility flows along with their probability of exposure to the transmission risk. Agents' equilibrium actions exhibit (1) path-dependent dynamics when their probability of asymptomatic infection is positive and (2) polarization when the hazard rate of exposure probability exceeds their degree of risk aversion. Comparative statics analyses show that the levels of agents' equilibrium communicable activity are nonincreasing in their discount factor, their probability of showing symptoms upon infection, and their expectation of suffering upon showing symptoms. If the virus persists, then the model predicts that the only long-run equilibrium outcome is herd immunity.</p>
+				</li>
+				<li class="main">
+					<a href="polarization_counterfactual.pdf">Polarized protective behaviors in response to the Covid pandemic: An empirical study of changes in time spent socializing</a>
+					<p class="writer">writers 2<a href="polarization_counterfactual.pdf" class="pdf-link">[PDF]</a><span class="cite" onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'" onclick="copyCitation('Citation for Paper 2')">[cite]</span></p>
+					<p>This paper investigates the existence of polarized protective behaviors in response to the pandemic using empirical analysis of data from the American Time Use Survey (ATUS). The study finds that the proportion of people without daily social interaction increased significantly during the pandemic compared to the same period in 2019. Additionally, based on a counterfactual distribution estimated using the method developed by Chernozhukov et al. (2013), the study shows that people socializing during the pandemic would have spent similar amounts of time socializing if there were no pandemic. These findings provide evidence supporting the existence of polarization in which some people chose safety first and stopped socializing, while others chose to live as usual without reducing their social time during the pandemic.</p>
+				</li>
+				<li class="main">
+					<a>What drives polarized preventive behaviors during the pandemic?</a>
+					<p class="writer">writers 3<a href="paper3.pdf" class="pdf-link">[PDF]</a><span class="cite" onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'" onclick="copyCitation('Citation for Paper 3')">[cite]</span></p>
+					<p>Preventive behaviors in the pandemic encompass the trade-off between the private return from social activity and the risk of getting infected. Our study demonstrates that, under plausible assumptions regarding risk exposure, the nature of such a trade-off can lead to polarized choices for a relatively homogeneous population. This finding aligns well with the prevalence of behavioral polarization in preventive measures adoption during the pandemic for a variety of domains in the survey data. We validate the theory by confronting other predictions of the theory with the data. We also argue that the polarization of the preventive choices is unlikely driven solely by a polarized distribution of the population.</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="content">
+		<div id="section5" class="section">
+			<h2>CONTACT</h2>
+			<ul class="grant">
+				<li class="contact">
+					E-mail:
+				</li>
+				<li>
+					&nbsp;&nbsp;&nbsp;
+					<span class="cite" onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'" onclick="copyCitation('criticalpoint39@stu.pku.edu.cn')">
+						criticalpoint39@stu.pku.edu.cn
+					</span>
+					<br>
+				</li>
+				<li>
+					&nbsp;&nbsp;&nbsp;
+					<span class="cite" onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'" onclick="copyCitation('criticalpoint39@stu.pku.edu.cn')">
+						criticalpoint39@qq.com
+					</span>
+					<br>
+				</li>
+				<li>
+					&nbsp;&nbsp;&nbsp;
+					<span class="cite" onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'" onclick="copyCitation('criticalpoint39@stu.pku.edu.cn')">
+						jdli2021@nsd.pku.edu.cn
+					</span>
+					<br>
+				</li>
+				<li>
+					&nbsp;&nbsp;&nbsp;
+					<span class="cite" onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'" onclick="copyCitation('criticalpoint39@stu.pku.edu.cn')">
+						criticalpoint39@163.com
+					</span>
+					<br>
+				</li>
+			</ul>
+			<ul class="grant">
+				<li class="contact">
+					WeChat:
+				</li>
+				<li>
+					&nbsp;&nbsp;&nbsp;
+					<span class="cite" onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'" onclick="copyCitation('criticalpoint39@stu.pku.edu.cn')">
+						criticalpoint39
+					</span>
+					<br>
+				</li>
+			</ul>
+			<ul class="grant">
+				<li class="contact">
+					QQ:
+				</li>
+				<li>
+					&nbsp;&nbsp;&nbsp;
+					<span class="cite" onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'" onclick="copyCitation('criticalpoint39@stu.pku.edu.cn')">
+						754586029
+					</span>
+					<br>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		const container = document.querySelector('.background-container');
+
+		window.addEventListener('scroll', () => {
+			const scrollPercentage = window.scrollY / (document.body.clientHeight - window.innerHeight);
+			const calculatedOpacity = scrollPercentage;
+			container.style.backgroundImage = `linear-gradient(rgba(253, 249, 246, ${0.3 + 4 * calculatedOpacity}), rgba(253, 249, 246, ${8 * calculatedOpacity})), url('url_e.png')`;
+		});
+	</script>
+</body>
+</html>
