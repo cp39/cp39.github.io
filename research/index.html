@@ -1,368 +1,108 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-	<title>Research | Jianduo Li 李健铎</title>
-	<link rel="icon" type="image/png" href="favicon.png">
-	<style>
-		h2 {
-			color: darkblue;
-			font-family: 'Castellar', serif;
-			margin-top: 4em;
-			font-size: 32px;
-			text-align: center;
-			padding-top: 0;
-			margin-bottom: 10px;
-			margin-left: 60px;
-			border-bottom: 1px solid darkblue;
-			scroll-margin-top: 130px;
-		}
-
-		#section1 h2 {
-			margin-top: 8em;
-		}
-
-		body {
-			justify-content: center;
-			align-items: center;
-			margin: 0 auto;
-			padding-bottom: 0px;
-			max-width: 65%;
-			background-color: #FDFAF6;
-			font-family: 'Palatino Linotype', serif;
-			color: darkblue;
-		}
-
-		nav {
-			position: fixed;
-			text-align: center;
-			top: 0;
-			left: 0px;
-			right: 0px;
-			width: 100%;
-			background: #ffffff;
-			padding: 10px 0;
-			display: block;
-			justify-content: initial;
-			z-index: 1000;
-		}
-
-		nav a {
-			font-family: 'Castellar', serif;
-			font-weight: lighter;
-			font-size: 22px;
-			text-align: center;
-			margin: 0px 14px;
-			padding: 0px;
-			display: inline-block;
-			text-decoration: none;
-			color: darkblue;
-		}
-
-		nav a.active {
-			font-weight: bold;
-		}
-
-		a {
-			color: darkblue;
-			font-family: 'Palatino Linotype', serif;
-			font-size: 20px;
-			font-weight: bold;
-			text-decoration: none;
-		}
-
-		p {
-			font-size: 18px;
-			line-height: 1.65;
-		}
-
-		li {
-			margin: 18px;
-			font-size: 20px;
-			line-height: 1.6;
-		}
-
-		.main {
-			list-style-type: none;
-		}
-
-		.section {
-			padding-bottom: 100px;
-		}
-
-		/* ---------- paper cards ---------- */
-		.paper {
-			border-left: 3px solid darkblue;
-			padding-left: 24px;
-			margin: 55px 0 0 0;
-		}
-
-		.paper-title {
-			font-family: 'Palatino Linotype', serif;
-			font-size: 24px;
-			font-weight: bold;
-			color: darkblue;
-			line-height: 1.35;
-			margin: 0 0 8px 0;
-		}
-
-		.paper-meta {
-			font-family: 'Palatino Linotype', serif;
-			font-size: 17px;
-			font-style: italic;
-			color: darkblue;
-			margin: 0 0 14px 0;
-		}
-
-		.paper-abstract {
-			font-family: 'Palatino Linotype', serif;
-			font-size: 18px;
-			line-height: 1.7;
-			color: darkblue;
-			margin: 0;
-		}
-
-		.keyword {
-			font-family: 'Palatino Linotype', serif;
-			font-size: 16px;
-			color: darkblue;
-			opacity: 0.85;
-			margin-top: 12px;
-		}
-
-		/* ---------- interests ---------- */
-		.interest-title {
-			font-family: 'Palatino Linotype', serif;
-			font-size: 22px;
-			font-weight: bold;
-			color: darkblue;
-			margin-bottom: 4px;
-		}
-
-		.interest-body {
-			font-family: 'Palatino Linotype', serif;
-			font-size: 18px;
-			line-height: 1.65;
-			color: darkblue;
-			margin: 0 0 4px 0;
-		}
-
-		.contact {
-			font-family: 'Palatino Linotype', serif;
-			font-size: 22px;
-			color: darkblue;
-			font-weight: bold;
-			list-style-type: none;
-		}
-
-		.cite {
-			font-family: 'Palatino Linotype', serif;
-			color: darkblue;
-			font-size: 20px;
-			cursor: pointer;
-			text-decoration: underline;
-			font-style: initial;
-		}
-
-		@media screen and (max-width: 1400px) {
-			body { max-width: 69%; }
-			nav a { margin: 0px 12px; font-size: 21px; }
-		}
-
-		@media screen and (max-width: 1300px) {
-			body { max-width: 75%; }
-			nav a { margin: 0px 10px; font-size: 20px; }
-		}
-
-		@media screen and (max-width: 1200px) {
-			body { max-width: 81%; }
-			nav a { margin: 0px 9px; font-size: 19px; }
-		}
-
-		@media screen and (max-width: 1100px) {
-			body { max-width: 88%; }
-			nav a { margin: 0px 8px; font-size: 18px; }
-		}
-
-		@media screen and (max-width: 900px) {
-			body { max-width: 91%; }
-			nav a { margin: 0px 6px; font-size: 16px; }
-			.paper-title { font-size: 21px; }
-		}
-	</style>
-
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			var sections = document.querySelectorAll(".section");
-			var navLinks = document.querySelectorAll("nav a[href^='#']");
-
-			window.addEventListener("scroll", function () {
-				sections.forEach(function (section, index) {
-					var rect = section.getBoundingClientRect();
-					if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-						navLinks.forEach(function (link) {
-							link.classList.remove("active");
-						});
-						if (navLinks[index]) {
-							navLinks[index].classList.add("active");
-						}
-					}
-				});
-			});
-		});
-	</script>
-
-	<script>
-		function copyCitation(citationText) {
-			var textarea = document.createElement('textarea');
-			textarea.value = citationText;
-			document.body.appendChild(textarea);
-			textarea.select();
-			document.execCommand('copy');
-			document.body.removeChild(textarea);
-			alert('Contact information copied: ' + citationText);
-		}
-	</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research | Jianduo Li</title>
+  <meta name="description" content="Research by Jianduo Li on peer effects, social networks, team production, artificial intelligence, and applied microeconomics.">
+  <link rel="canonical" href="https://jianduoli.com/research/">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
-	<nav>
-		<a href="https://jianduoli.com">HOME</a>
-		<a href="#section1">OVERVIEW</a>
-		<a href="#section2">RESEARCH INTERESTS</a>
-		<a href="#section3">WORKING PAPERS</a>
-		<a href="#section4">COLLABORATION</a>
-	</nav>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="site-name" href="/">Jianduo Li <span>李健铎</span></a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/research/" aria-current="page">Research</a>
+        <a href="/resume_en.pdf">CV</a>
+        <a href="mailto:criticalpoint39@stu.pku.edu.cn">Email</a>
+      </nav>
+    </div>
+  </header>
 
-	<div id="content">
-		<div id="section1" class="section">
-			<h2>OVERVIEW</h2>
-			<ul>
-				<li class="main">
-					Jianduo Li | 李健铎
-				</li>
-				<li class="main">
-					I am a Ph.D. student in Economics at the National School of Development (China Center for Economic Research), Peking University, advised by Professor Junjian Yi. My work is empirical and applied-microeconomic in orientation: I study how people influence one another inside networks, teams, and classrooms, and how those interactions shape the effects of policy.
-				</li>
-				<li class="main">
-					Methodologically, I combine randomized experiments and natural variation with structural estimation, so that reduced-form patterns can be mapped into behavioral mechanisms and used for counterfactual policy simulation. My current projects span peer effects in social networks, the formation and rewiring of friendship ties, and the consequences of generative AI for team production.
-				</li>
-			</ul>
-		</div>
-	</div>
+  <main class="container">
+    <header class="page-intro">
+      <p class="eyebrow">Research</p>
+      <h1>Questions about peers, teams, and technology.</h1>
+      <p>I combine randomized experiments and natural variation with structural estimation to study how social interactions shape behavior and policy outcomes.</p>
+    </header>
 
-	<div id="content">
-		<div id="section2" class="section">
-			<h2>RESEARCH INTERESTS</h2>
-			<ul>
-				<li class="main">
-					<div class="interest-title">1. Peer Effects Across Domains</div>
-					<p class="interest-body">
-						I am interested in how peers' characteristics, choices, and outcomes causally shape individual behavior — in classrooms, workplaces, and other social environments. A central question in my work is whether the standard linear-in-means representation of the peer environment is adequate, or whether influence depends nonlinearly on the distribution of peer outcomes. Related topics include the reflection problem, network endogeneity, and the design of peer-group assignment policies.
-					</p>
-				</li>
-				<li class="main">
-					<div class="interest-title">2. Teamwork and Team Production</div>
-					<p class="interest-body">
-						I study how teams form, how members divide a fixed time budget between their own tasks and helping others, and how incentive schemes reallocate effort between the two. This line of work connects to the economics of social skills, multitask agency, and the design of collaborative work environments — and, more recently, to how generative AI changes the returns to working alone versus working together.
-					</p>
-				</li>
-				<li class="main">
-					<div class="interest-title">3. Applied Microeconomics</div>
-					<p class="interest-body">
-						More broadly, I work on applied microeconomics with a focus on the economics of education and the economics of technology. I am drawn to questions where a credible source of exogenous variation can be paired with a transparent behavioral model, so that the estimates speak to both mechanism and policy.
-					</p>
-				</li>
-			</ul>
-		</div>
-	</div>
+    <section class="section" aria-labelledby="interests-title">
+      <div>
+        <p class="section-label">Areas</p>
+        <h2 id="interests-title">Research interests</h2>
+      </div>
+      <div class="section-body">
+        <ul class="research-list">
+          <li class="research-item">
+            <h3>Peer effects across domains</h3>
+            <p>I study how peers' characteristics, choices, and outcomes shape individual behavior in classrooms, workplaces, and other social environments. My work asks when standard peer means are inadequate and how nonlinear influence changes policy design.</p>
+          </li>
+          <li class="research-item">
+            <h3>Teamwork and team production</h3>
+            <p>I study how teams form, how members divide time between their own tasks and helping others, and how incentives and generative AI change collaboration.</p>
+          </li>
+          <li class="research-item">
+            <h3>Applied microeconomics</h3>
+            <p>More broadly, I work on the economics of education and technology, especially questions where credible exogenous variation can be paired with a transparent behavioral model.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-	<div id="content">
-		<div id="section3" class="section">
-			<h2>WORKING PAPERS</h2>
-			<ul>
-				<li class="main">
-					<div class="paper">
-						<p class="paper-title">
-							Heterogeneous Peer Effects in Social Networks: Structural Estimation and Policy Simulations
-						</p>
-						<p class="paper-meta">
-							with Junjian Yi &nbsp;|&nbsp; Working paper
-						</p>
-						<p class="paper-abstract">
-							This paper asks whether the equal-weight peer mean adequately describes a student's peer environment. Using friend nominations, repeated Chinese and mathematics scores, and the randomized seating intervention of Wu et al. (2023), we distinguish a direct payoff spillover from adjustment toward a peer-based reference point, and we allow the reference point to depend nonlinearly on peers' effort through CES and maximum-value social norms. Reduced-form evidence shows that high- and low-achieving peers do not enter the peer environment symmetrically, and that the coefficient on the peer mean is unstable once nonlinear peer statistics are included. Structurally, the spillover and conformism channels are small relative to their standard errors, so the decomposition remains statistically fragile. Counterfactual simulations compare targeted link addition, degree-preserving rewiring, random link addition, and a persistent productivity intervention for bottom-quintile students; targeted rewiring tends to dominate random links, and a persistent intervention generates a far larger equilibrium response than a one-time score shock.
-						</p>
-						<p class="keyword">
-							Keywords: peer effects; social networks; heterogeneous peer effects; spillover effect; conformism effect; structural estimation
-						</p>
-					</div>
-				</li>
+    <section class="section" aria-labelledby="papers-title">
+      <div>
+        <p class="section-label">In progress</p>
+        <h2 id="papers-title">Working papers</h2>
+      </div>
+      <div class="section-body">
+        <ol class="paper-list">
+          <li class="paper">
+            <p class="paper-number">01</p>
+            <h3>Heterogeneous Peer Effects in Social Networks: Structural Estimation and Policy Simulations</h3>
+            <p class="paper-meta">with Junjian Yi · Working paper</p>
+            <p class="paper-abstract">This paper asks whether the equal-weight peer mean adequately describes a student's peer environment. Using friend nominations, repeated Chinese and mathematics scores, and a randomized seating intervention, we distinguish a direct payoff spillover from adjustment toward a peer-based reference point and allow that reference point to depend nonlinearly on peers' effort. Counterfactual simulations compare targeted link addition, degree-preserving rewiring, random link addition, and a persistent productivity intervention for bottom-quintile students.</p>
+            <p class="keywords">Peer effects · Social networks · Heterogeneous peer effects · Structural estimation</p>
+          </li>
 
-				<li class="main">
-					<div class="paper">
-						<p class="paper-title">
-							Joint Tasks, Information Disclosure, and Friendship Rewiring: A Theory of Social Integration and Academic Spillovers
-						</p>
-						<p class="paper-meta">
-							with Zhi Cao and Junjian Yi &nbsp;|&nbsp; Working paper
-						</p>
-						<p class="paper-abstract">
-							Joint activities can create friendships even when the activity itself is not academically productive: a low-achieving and a high-achieving student may discover that they enjoy the same game, sport, or music, and their friendship subsequently changes academic peer exposure. This paper develops a theory in which joint tasks reshape friendship networks by revealing previously unknown common interests. Agents form friendships for the value of nonacademic interaction, but relationships require bilateral consent and social attention is scarce, so a newly attractive tie can displace an existing one. The model separates a direct contact effect from an information-disclosure effect, and shows that the intervention rewires the network rather than simply adding independent links. We characterize when cross-group tasks reduce network segregation, derive the exact academic network multiplier in the linear case, and establish long-run convergence once common interests are fully explored. The framework yields distinct predictions for link formation, persistence, dissolution, reciprocity, and the distribution of academic spillovers.
-						</p>
-						<p class="keyword">
-							Keywords: friendship formation; information disclosure; network rewiring; segregation; academic spillovers
-						</p>
-					</div>
-				</li>
+          <li class="paper">
+            <p class="paper-number">02</p>
+            <h3>Joint Tasks, Information Disclosure, and Friendship Rewiring: A Theory of Social Integration and Academic Spillovers</h3>
+            <p class="paper-meta">with Zhi Cao and Junjian Yi · Working paper</p>
+            <p class="paper-abstract">This paper develops a theory in which joint tasks reshape friendship networks by revealing previously unknown common interests. Friendships require bilateral consent and social attention is scarce, so a newly attractive tie can displace an existing one. The model separates direct contact from information disclosure and yields predictions for link formation, persistence, dissolution, reciprocity, and academic spillovers.</p>
+            <p class="keywords">Friendship formation · Information disclosure · Network rewiring · Segregation</p>
+          </li>
 
-				<li class="main">
-					<div class="paper">
-						<p class="paper-title">
-							How Generative AI Changes Team Production: Motivation, Experimental Design, and Testable Predictions
-						</p>
-						<p class="paper-meta">
-							with Dengkun Chen and Junjian Yi &nbsp;|&nbsp; Working paper (experimental design)
-						</p>
-						<p class="paper-abstract">
-							Generative AI raises average productivity in individual work, but the gains vary substantially with baseline skill, and team output also depends on whether people form teams, how they divide time between their own work and helping a partner, and how compensation rewards each activity. An AI tool can therefore raise individual output while strengthening or weakening collaboration, and solo treatment effects cannot identify these mechanisms. We propose an experiment that separates AI's direct productivity effect from changes in team formation, effort allocation, and helping behavior. The design crosses AI access with team-formation rules (exogenous pairing versus mutual consent) and payment rules (individual versus team performance), and measures two distinct baseline skills — Raven's fluid intelligence and RMET social skill. The resulting predictions concern solo productivity, help and own-effort allocation under team pay, the ambiguous output effect of team pay, AI-by-payment interactions in helping, and AI's effect on consent and mutual team formation.
-						</p>
-						<p class="keyword">
-							Keywords: generative AI; team production; incentives; helping behavior; social skills; experimental design
-						</p>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
+          <li class="paper">
+            <p class="paper-number">03</p>
+            <h3>How Generative AI Changes Team Production: Motivation, Experimental Design, and Testable Predictions</h3>
+            <p class="paper-meta">with Dengkun Chen and Junjian Yi · Working paper (experimental design)</p>
+            <p class="paper-abstract">We propose an experiment that separates AI's direct productivity effect from changes in team formation, effort allocation, and helping behavior. The design crosses AI access with team-formation rules and payment rules, and measures both fluid intelligence and social skill. The resulting predictions concern solo productivity, helping under team pay, AI-by-payment interactions, and mutual team formation.</p>
+            <p class="keywords">Generative AI · Team production · Incentives · Helping behavior · Experimental design</p>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-	<div id="content">
-		<div id="section4" class="section">
-			<h2>COLLABORATION</h2>
-			<ul class="main">
-				<li class="main">
-					I am always happy to discuss research and to hear about new ideas. I would be particularly glad to talk with anyone working on peer effects and social networks, team production and the economics of social skills, the economics of education, or the labor-market consequences of generative AI.
-				</li>
-				<li class="main">
-					I am also open to collaborating on empirical projects that require structural estimation, network data construction, or the design of field and laboratory experiments. If you are working on something adjacent to the papers above — or on something that only looks adjacent — please feel free to reach out.
-				</li>
-				<li class="main">
-					The fastest way to reach me is by e-mail. I am also glad to share slides, code, or drafts of any of the working papers listed above.
-				</li>
-			</ul>
-			<ul>
-				<li class="contact">
-					E-mail:
-				</li>
-				<li>
-					&nbsp;&nbsp;&nbsp;
-					<span class="cite" onmouseover="this.style.color='blue'" onmouseout="this.style.color='darkblue'" onclick="copyCitation('criticalpoint39@stu.pku.edu.cn')">
-						criticalpoint39@stu.pku.edu.cn
-					</span>
-					<br>
-				</li>
-			</ul>
-		</div>
-	</div>
+    <section class="section" aria-labelledby="collaboration-title">
+      <div>
+        <p class="section-label">Collaboration</p>
+        <h2 id="collaboration-title">Let’s talk</h2>
+      </div>
+      <div class="section-body">
+        <p>I am particularly glad to hear from researchers working on peer effects and social networks, team production and social skills, the economics of education, or the labor-market consequences of generative AI.</p>
+        <p><a href="mailto:criticalpoint39@stu.pku.edu.cn">criticalpoint39@stu.pku.edu.cn</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <p>Jianduo Li · 李健铎</p>
+      <p><a href="/">Back to home</a></p>
+    </div>
+  </footer>
 </body>
-
 </html>

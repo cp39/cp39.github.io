@@ -1,357 +1,102 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-	<title>Jianduo Li 李健铎 #ECON </title>
-	<link rel="icon" type="image/png" href="favicon.png">
-	<meta name="description"
-      content="李健铎 Jianduo Li，北京大学国家发展研究院经济学博士生，研究方向包括应用微观经济学、同伴效应、人工智能与教育经济学。">
-	<style>
-        h2 {
-            color: darkblue;
-            font-family: 'Castellar', serif;
-            margin-top: 5em;
-            font-size: 32px;
-            text-align: center;
-            padding-top: 0; /* 移除顶部内边距 */
-            margin-bottom: 10px; /* 添加底部外边距，以与下面的ul元素间距开一点 */
-            margin-left: 60px;
-            border-bottom: 1px solid darkblue;
-        }
-
-        #section1 h2 {
-            margin-top: 17em;
-        }
-
-        h3, h5, h6 {
-            color: darkblue;
-            font-family: 'Castellar', serif;
-            margin-top: 6em;
-            font-size: 32px;
-            text-align: center;
-            padding-top: 0; /* 移除顶部内边距 */
-            margin-bottom: 10px; /* 添加底部外边距，以与下面的ul元素间距开一点 */
-            margin-left: 60px;
-        }
-        h4 {
-            margin-bottom:10em;
-        }
-        body {
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-            padding-bottom: 0px;
-            max-width: 65%;
-            background-color: #FDFAF6;
-			font-family: 'Palatino Linotype', serif;
-            color: darkblue;
-        }
-
-        nav {
-            position: fixed;
-            text-align: center;
-            top: 0;
-            left: 0px;
-            right: 0px;
-            width: 100%;
-            background: #ffffff;
-            padding: 10px 0;
-            display: block;
-            justify-content: initial;
-            z-index: 1000;
-        }
-
-            nav a {
-                font-family: 'Castellar', serif;
-                font-weight: lighter;
-                font-size: 25px;
-                text-align: center;
-                margin: 0px 10px;
-                padding: 0px;
-                display: inline-block;
-                text-decoration: none;
-                color: darkblue;
-            }
-
-
-        nav a.active {
-            font-weight: bold;
-        }
-
-        @media screen and (max-width: 1400px) {
-            body {
-                max-width: 69%;
-            }
-
-            nav a {
-                margin: 0px 45px;
-            }
-        }
-
-        @media screen and (max-width: 1300px) {
-            body {
-                max-width: 75%;
-            }
-
-            nav a {
-                margin: 0px 40px;
-            }
-        }
-
-        @media screen and (max-width: 1200px) {
-            body {
-                max-width: 81%;
-            }
-
-            nav a {
-                margin: 0px 35px;
-            }
-        }
-
-        @media screen and (max-width: 1100px) {
-            body {
-                max-width: 88%;
-            }
-
-            nav a {
-                margin: 0px 30px;
-            }
-        }
-
-
-        @media screen and (max-width: 900px) {
-            body {
-                max-width: 91%; /* 或您认为合适的比例 */
-            }
-
-            nav a {
-                margin: 0px 25px;
-            }
-        }
-
-
-		a {
-			color: darkblue;
-			font-family: 'Palatino Linotype', serif;
-			font-size: 22px;
-			font-weight: bold;
-			text-decoration: none;
-		}
-
-        p {
-            font-size: 16px;
-        }
-
-        li {
-            margin: 20px;
-            font-size: 22px;
-        }
-
-        .homepage {
-            font-size: 18px;
-            margin: 9px;
-            text-align: center;
-            list-style-type: none;
-        }
-
-
-		.main {
-			list-style-type: none;
-		}
-
-        .writer {
-            font-family: 'Palatino Linotype', serif;
-            font-weight: lighter;
-            color: darkblue;
-            font-size: 16px;
-            font-style: italic;
-        }
-
-		/* 设置 PDF 链接的字体样式 */
-        .pdf-link {
-            font-family: 'Palatino Linotype', serif;
-            font-weight: lighter;
-            color: darkblue; /* 字体颜色 */
-            font-size: 16px; /* 字体大小 */
-            text-decoration: underline; /* 下划线 */
-            font-style: initial;
-        }
-
-        .cite {
-            font-family: 'Palatino Linotype', serif;
-            color: darkblue; /* [cite] 字体颜色 */
-            font-size: 22px;
-            cursor: pointer; /* 设置鼠标为手形指针 */
-            text-decoration: underline; /* 下划线 */
-            font-style: initial;
-        }
-
-        .grant {
-            font-family: 'Palatino Linotype', serif;
-            font-size: 20px;
-            color: darkblue;
-            list-style-type: none;
-        }
-
-        .contact {
-            font-family: 'Palatino Linotype', serif;
-            font-size: 24px;
-            color: darkblue;
-            font-weight:bold;
-            list-style-type: none;
-        }
-
-        .section {
-            padding-bottom: 100px;
-        }
-
-
-	</style>
-
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			var sections = document.querySelectorAll(".section");
-			var navLinks = document.querySelectorAll("nav a");
-
-			window.addEventListener("scroll", function () {
-				sections.forEach(function (section, index) {
-					var rect = section.getBoundingClientRect();
-					if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-						navLinks.forEach(function (link) {
-							link.classList.remove("active");
-						});
-						navLinks[index].classList.add("active");
-					}
-				});
-			});
-		});
-	</script>
-
-	<script>
-		function copyCitation(citationText) {
-			var textarea = document.createElement('textarea');
-			textarea.value = citationText;
-			document.body.appendChild(textarea);
-			textarea.select();
-			document.execCommand('copy');
-			document.body.removeChild(textarea);
-			alert('Contact information copied: ' + citationText);
-		}
-	</script>
-
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jianduo Li | Economics</title>
+  <meta name="description" content="Jianduo Li is a Ph.D. student in Economics at Peking University, working on peer effects, social networks, team production, and artificial intelligence.">
+  <link rel="canonical" href="https://jianduoli.com/">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <nav>
-    <a href="#section1">HOME PAGE</a>
-    <a href="#section2">INTERESTS</a>
-    <a href="#section3">SKILLS</a>
-    <a href="#section4">RESUME</a>
-    <a href="#section5">CONTACT</a>
-    <a href="https://jianduoli.com/research">RESEARCH</a>
-</nav>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="site-name" href="/">Jianduo Li <span>李健铎</span></a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/" aria-current="page">Home</a>
+        <a href="/research/">Research</a>
+        <a href="#cv">CV</a>
+        <a href="mailto:criticalpoint39@stu.pku.edu.cn">Email</a>
+      </nav>
+    </div>
+  </header>
 
-    <div id="content">
-        <div id="section1" class="section">
-            <h2>HOME PAGE</h2>
-            <ul>
-				<li class="main">
-                	Jianduo Li | 李健铎
-                </li>
-                <li class="main">
-                    I am a second-year Ph.D. student in Economics at the National School of Development (China Center for Economic Research), Peking University. I received my bachelor's degree in Economics from the same institution.
-                </li>
-                <li class="main">
-                    My research interests include applied microeconomics, peer effects, artificial intelligence, and the economics of education.
-                </li>
-            </ul>
+  <main class="container">
+    <section class="intro" aria-labelledby="intro-title">
+      <img class="monogram" src="favicon.png" alt="Jianduo Li monogram">
+      <div class="intro-copy">
+        <p class="eyebrow">Economics · Peking University</p>
+        <h1 id="intro-title">Jianduo Li <span class="chinese-name" lang="zh-CN">李健铎</span></h1>
+        <p class="lead">I am a Ph.D. student in Economics at the National School of Development (China Center for Economic Research), Peking University.</p>
+        <p>My research is in applied microeconomics. I study how people influence one another in networks, classrooms, and teams—and how those interactions shape the effects of policy.</p>
+        <p>My current work focuses on heterogeneous peer effects, the formation and rewiring of social networks, and the consequences of generative AI for team production. I am advised by Professor Junjian Yi.</p>
+        <div class="link-row" aria-label="Profile links">
+          <a href="/research/">Research</a>
+          <a href="resume_en.pdf">CV (English)</a>
+          <a href="resume-cn.pdf">CV (中文)</a>
+          <a href="mailto:criticalpoint39@stu.pku.edu.cn">Email</a>
+          <a href="https://github.com/cp39">GitHub</a>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <div id="content">
-        <div id="section2" class="section">
-            <h2>INTERESTS</h2>
-            <ul>
-                <li class="main">
-                    Academically, I am interested in applied microeconomics, particularly peer effects, artificial intelligence, and the economics of education. My current research focuses on heterogeneous peer effects, AI and team production, and peer effects in dynamic networks.
-                </li>
-                <li class="main">
-                    Outside of research, I enjoy playing table tennis and have recently started learning badminton. I am an avid trading card games (TCG) player and have played several TCGs, including Yu-Gi-Oh!, Detective Conan TCG, Pokemon TCG, Shadowverse: Evolve, and Weiss Schwarz. I am proficient in Yu-Gi-Oh! and Detective Conan TCG.
-                </li>
-            </ul>
-        </div>
-    </div>
+    <section class="section" id="research" aria-labelledby="research-title">
+      <div>
+        <p class="section-label">Research</p>
+        <h2 id="research-title">Current interests</h2>
+      </div>
+      <div class="section-body">
+        <ul class="research-list">
+          <li class="research-item">
+            <h3>Peer effects &amp; networks</h3>
+            <p>Heterogeneous social interactions, network endogeneity, and the design of peer-group and network policies.</p>
+          </li>
+          <li class="research-item">
+            <h3>Team production &amp; AI</h3>
+            <p>How technology and incentives change team formation, effort allocation, helping behavior, and collaborative output.</p>
+          </li>
+          <li class="research-item">
+            <h3>Applied microeconomics</h3>
+            <p>Empirical work in the economics of education and technology, combining credible variation with transparent behavioral models.</p>
+          </li>
+        </ul>
+        <p><a href="/research/">View working papers and research details →</a></p>
+      </div>
+    </section>
 
-    <div id="content">
-        <div id="section3" class="section">
-            <h2>SKILLS</h2>
-            <ul>
-                <li class="main">
-                    I use Stata, MATLAB, and Python (NumPy and pandas) for data analysis and research. I also work with LaTeX, Microsoft Office, HTML/CSS, and basic AI API integration.
-                </li>
-                <li class="main">
-                    I am a native Chinese speaker and use English for academic reading and communication.
-                </li>
-            </ul>
-        </div>
-    </div>
+    <section class="section" id="cv" aria-labelledby="cv-title">
+      <div>
+        <p class="section-label">Curriculum Vitae</p>
+        <h2 id="cv-title">CV</h2>
+      </div>
+      <div class="section-body">
+        <p>Download a current curriculum vitae in English or Chinese.</p>
+        <ul class="cv-links">
+          <li><a href="resume_en.pdf">English CV (PDF)</a></li>
+          <li><a href="resume-cn.pdf">中文简历 (PDF)</a></li>
+        </ul>
+      </div>
+    </section>
 
-    <div id="content">
-        <div id="section4" class="section">
-            <h2>RESUME</h2>
-            <ul>
-                <li class="main">
-                    <a href="resume-cn.pdf">RESUME, Chinese version</a>
-                    <p>&nbsp;&nbsp;&nbsp;<a href="resume-cn.pdf" class="pdf-link">[PDF]</a></p>
-                </li>
-                <li class="main">
-                    <a href="resume_en.pdf">RESUME, English version</a>
-                    <p>&nbsp;&nbsp;&nbsp;<a href="resume_en.pdf" class="pdf-link">[PDF]</a></p>
-                </li>
-            </ul>
-        </div>
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div>
+        <p class="section-label">Contact</p>
+        <h2 id="contact-title">Get in touch</h2>
+      </div>
+      <div class="section-body">
+        <p>I am always happy to discuss research, adjacent ideas, and possible collaborations.</p>
+        <p><a href="mailto:criticalpoint39@stu.pku.edu.cn">criticalpoint39@stu.pku.edu.cn</a></p>
+        <p class="quiet">National School of Development, Peking University · Beijing, China</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-wrap">
+      <p>Jianduo Li · 李健铎</p>
+      <p>Last updated October 2026</p>
     </div>
-    <div id="content">
-        <div id="section5" class="section">
-            <h2>CONTACT</h2>
-            <ul class="grant">
-                <li class="contact">
-                    E-mail:
-                </li>
-                <li>
-                    &nbsp;&nbsp;&nbsp;
-                    <span class="cite" onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'" onclick="copyCitation('criticalpoint39@stu.pku.edu.cn')">
-                        criticalpoint39@stu.pku.edu.cn
-                    </span>
-                    <br>
-                </li>
-            </ul>
-            <ul class="grant">
-                <li class="contact">
-                    Phone:
-                </li>
-                <li>
-                    &nbsp;&nbsp;&nbsp;
-                    <span class="cite" onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'" onclick="copyCitation('+86 19164011489')">
-                        +86 19164011489
-                    </span>
-                    <br>
-                </li>
-            </ul>
-            <ul class="grant">
-                <li class="contact">
-                    QQ:
-                </li>
-                <li>
-                    &nbsp;&nbsp;&nbsp;
-                    <span class="cite" onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'" onclick="copyCitation('754586029')">
-                        754586029
-                    </span>
-                    <br>
-                </li>
-            </ul>
-        </div>
-    </div>
+  </footer>
 </body>
 </html>
