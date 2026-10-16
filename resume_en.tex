@@ -1,0 +1,120 @@
+% !TeX program = xelatex
+% Compile with: xelatex resume_en.tex (run twice if needed)
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,top=1.25cm,bottom=1.15cm,left=1.55cm,right=1.55cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.95]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{titlesec}
+
+\definecolor{Accent}{HTML}{173B63}
+\definecolor{Body}{HTML}{202A33}
+\definecolor{Muted}{HTML}{64707D}
+\hypersetup{colorlinks=true,urlcolor=Accent,linkcolor=Accent}
+\urlstyle{same}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=2em
+\color{Body}
+
+% ---- Personal details: edit here when information changes ----
+\newcommand{\ResumeName}{Jianduo Li}
+\newcommand{\Phone}{+86 19164011489}
+\newcommand{\Email}{criticalpoint39@gmail.com}
+\newcommand{\GithubID}{cp39}
+\newcommand{\PhDInstitution}{Peking University}
+\newcommand{\PhDSchool}{National School of Development}
+\newcommand{\PhDStart}{Sep. 2025}
+\newcommand{\BachelorEnd}{Jun. 2025}
+
+\titleformat{\section}
+  {\large\bfseries\color{Accent}}
+  {}{0pt}{}
+  [\vspace{-0.35em}\color{Accent!55}\titlerule]
+\titlespacing*{\section}{0pt}{0.58em}{0.32em}
+
+\setlist[itemize]{
+  leftmargin=1.35em,
+  itemsep=0.10em,
+  topsep=0.15em,
+  parsep=0pt,
+  label=\textcolor{Accent}{\textbullet}
+}
+
+\newcommand{\eduentry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X@{\hspace{0.6em}}>{\raggedleft\arraybackslash}p{3.9cm}@{}}
+    \textbf{#1} & \textcolor{Muted}{#2} \\
+    \textit{#3} & \textcolor{Muted}{#4}
+  \end{tabularx}\par\vspace{-0.18em}
+}
+
+\begin{document}
+\raggedright
+
+\begin{center}
+  {\fontsize{24}{27}\selectfont\bfseries\color{Accent}\ResumeName}\par
+  \vspace{0.16em}
+  {\small Second-year Ph.D. Student in Economics\enspace\textcolor{Accent!60}{|}\enspace Applied Microeconomics}\par
+  \vspace{0.38em}
+  {\small
+    \href{tel:+8619164011489}{\Phone}
+    \enspace\textcolor{Muted}{|}\enspace
+    \href{mailto:\Email}{\Email}
+    \enspace\textcolor{Muted}{|}\enspace
+    \href{https://github.com/\GithubID}{GitHub: \GithubID}
+  }\par
+  \vspace{0.14em}
+  {\small\textcolor{Muted}{Beijing, China \enspace\textbar\enspace June 15, 2003 \enspace\textbar\enspace \PhDInstitution}}
+\end{center}
+
+\vspace{-0.35em}
+\section*{Education}
+\eduentry{\PhDInstitution, \PhDSchool}{\PhDStart--Present}{Ph.D. Student in Economics (second year)}{Advisor: Junjian Yi}
+\eduentry{Peking University, National School of Development}{Sep. 2021--\BachelorEnd}{Bachelor of Economics; Peking University Third-Class Scholarship}{}
+
+\section*{Teaching Experience}
+\eduentry{Peking University, Principles of Economics}{Fall 2026}{Teaching Assistant}{}
+\eduentry{Peking University, International Finance}{Sep. 2024--Jan. 2025}{Teaching Assistant}{}
+
+\section*{Research Experience}
+\eduentry{Research Assistant to Professor Faqiang Li, Peking University}{Sep. 2024--Apr. 2025}{Institute of New Structural Economics}{Education economics; IO}
+\eduentry{Research Assistant to Professor Junjian Yi, Peking University}{Dec. 2023--Sep. 2024}{National School of Development}{Culture; local gazetteers}
+\eduentry{Research Assistant to Professor Dandan Zhang, Peking University}{Sep. 2023--Jan. 2024}{National School of Development}{Gig economy}
+\eduentry{Research Assistant to Professor Zhengwen Liu, Peking University}{Jul.--Nov. 2023}{School of Economics}{Patent research}
+
+\section*{Working Papers}
+\begin{itemize}
+  \item ``Heterogeneous Peer Effects in Social Networks: Structural Estimation and Policy Simulation''
+  \item ``How Generative AI Affects Team Production''
+  \item ``Peer Effects with Dynamic Networks''
+\end{itemize}
+
+\section*{Research Interests}
+Peer Effects, Artificial Intelligence, Applied Microeconomics, Economics of Education
+
+\section*{Academic Service}
+Ad hoc Referee, \textit{China Economic Quarterly}, 2026
+
+\section*{Skills and Languages}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries\raggedright\arraybackslash}p{4.3cm}X@{}}
+  Data and Computing & Stata, MATLAB, Python (NumPy, pandas) \\
+  Experimental Platforms & oTree (end-to-end platform development and experiment administration) \\
+  Other Tools & AI API integration, LaTeX \\
+  Languages & Chinese (native); English (academic reading and communication)
+\end{tabularx}
+
+\vfill
+\begin{center}
+  {\scriptsize\textcolor{Muted}{Last updated: October 2026}}
+\end{center}
+
+\end{document}

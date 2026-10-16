@@ -1,0 +1,113 @@
+% !TeX program = xelatex
+% 编译：xelatex resume_cn.tex（建议连续运行两次）
+\documentclass[10pt,a4paper,fontset=fandol]{ctexart}
+
+\usepackage[a4paper,top=1.25cm,bottom=1.15cm,left=1.55cm,right=1.55cm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{titlesec}
+
+\definecolor{Accent}{HTML}{173B63}
+\definecolor{Body}{HTML}{202A33}
+\definecolor{Muted}{HTML}{64707D}
+\hypersetup{colorlinks=true,urlcolor=Accent,linkcolor=Accent}
+\urlstyle{same}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\color{Body}
+
+% ---- 个人信息：以后只需修改这里 ----
+\newcommand{\ResumeName}{李健铎}
+\newcommand{\Phone}{+86 19164011489}
+\newcommand{\Email}{criticalpoint39@gmail.com}
+\newcommand{\GithubID}{cp39}
+\newcommand{\PhDInstitution}{北京大学}
+\newcommand{\PhDSchool}{国家发展研究院}
+\newcommand{\PhDStart}{2025.09}
+\newcommand{\BachelorEnd}{2025.06}
+
+\titleformat{\section}
+  {\large\bfseries\color{Accent}}
+  {}{0pt}{}
+  [\vspace{-0.35em}\color{Accent!55}\titlerule]
+\titlespacing*{\section}{0pt}{0.58em}{0.32em}
+
+\setlist[itemize]{
+  leftmargin=1.35em,
+  itemsep=0.10em,
+  topsep=0.15em,
+  parsep=0pt,
+  label=\textcolor{Accent}{\textbullet}
+}
+
+\newcommand{\eduentry}[4]{%
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X>{\raggedleft\arraybackslash}p{3.8cm}@{}}
+    \textbf{#1} & \textcolor{Muted}{#2} \\
+    \textit{#3} & \textcolor{Muted}{#4}
+  \end{tabularx}\par\vspace{-0.18em}
+}
+
+\begin{document}
+
+\begin{center}
+  {\fontsize{24}{27}\selectfont\bfseries\color{Accent}\ResumeName}\par
+  \vspace{0.16em}
+  {\small 经济学博士研究生（第二年）\enspace\textcolor{Accent!60}{|}\enspace 应用微观经济学}\par
+  \vspace{0.38em}
+  {\small
+    \href{tel:+8619164011489}{\Phone}
+    \enspace\textcolor{Muted}{|}\enspace
+    \href{mailto:\Email}{\Email}
+    \enspace\textcolor{Muted}{|}\enspace
+    \href{https://github.com/\GithubID}{GitHub: \GithubID}
+  }\par
+  \vspace{0.14em}
+  {\small\textcolor{Muted}{北京 \enspace\textbar\enspace 2003年6月15日 \enspace\textbar\enspace \PhDInstitution}}
+\end{center}
+
+\vspace{-0.35em}
+\section*{教育经历}
+\eduentry{\PhDInstitution\ · \PhDSchool}{\PhDStart--至今}{经济学博士研究生（第二年）}{导师：易君健}
+\eduentry{北京大学 · 国家发展研究院}{2021.09--\BachelorEnd}{经济学学士；北京大学三等奖学金}{}
+
+\section*{教学经历}
+\eduentry{北京大学 · 经济学原理}{2026秋季}{课程助教}{}
+\eduentry{北京大学 · 国际金融}{2024.09--2025.01}{课程助教}{}
+
+\section*{研究经历}
+\eduentry{北京大学新结构经济学研究院 · 李法强老师研究助理}{2024.09--2025.04}{研究助理}{教育经济学、产业组织}
+\eduentry{北京大学国家发展研究院 · 易君健老师研究助理}{2023.12--2024.09}{研究助理}{文化、县志研究}
+\eduentry{北京大学国家发展研究院 · 张丹丹老师研究助理}{2023.09--2024.01}{研究助理}{零工经济}
+\eduentry{北京大学经济学院 · 刘政文老师研究助理}{2023.07--2023.11}{研究助理}{专利研究}
+
+\section*{工作论文}
+\begin{itemize}
+  \item 社会网络中的异质性同伴效应：结构估计和政策模拟
+  \item How Generative AI Affects Team Production
+  \item Peer Effects with Dynamic Networks
+\end{itemize}
+
+\section*{研究方向}
+同伴效应、人工智能、应用微观经济学、教育经济学
+
+\section*{学术服务}
+匿名审稿人，《经济学》（季刊），2026
+
+\section*{技能与语言}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries\raggedright\arraybackslash}p{2.9cm}X@{}}
+  数据与计算 & Stata、MATLAB、Python（NumPy、pandas）\\
+  实验平台 & oTree（完整实验平台搭建与实验组织）\\
+  其他工具 & AI API 调用、LaTeX \\
+  语言 & 中文（母语）；英语（学术阅读与交流）
+\end{tabularx}
+
+\vfill
+\begin{center}
+  {\scriptsize\textcolor{Muted}{最后更新：2026年10月}}
+\end{center}
+
+\end{document}
